@@ -1,0 +1,54 @@
+// testList.c - testing DLList data type
+// Written by John Shepherd, March 2013
+
+#include <assert.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "DLList.h"
+
+int main (void)
+{
+	DLList myList = getDLList (stdin);
+	putDLList (stdout, myList);
+	assert (validDLList (myList));
+
+	// TODO: more tests needed here
+	
+	//TEST OF BEFORE
+	printf("the state of the list before the operation\n");
+    putDLList (stdout, myList);
+    printf("do command i in my list\n");
+    DLListBefore (myList, "Line BEFORE");
+    printf("state after operation\n");
+    putDLList (stdout, myList);
+    printf("current line is the (Line BEFORE)\n");
+    validDLList(myList);
+    printf("\n");
+    
+    //TEST OF AFTER
+    printf("the state of the list before the operation\n");
+    putDLList (stdout, myList);
+    printf("do command a in my list\n");
+    DLListAfter (myList, "Line AFTER");
+    printf("state after operation\n");
+    putDLList (stdout, myList);
+    printf("current line is the (Line AFTER)\n");    
+    validDLList(myList);
+    printf("\n");
+    
+    //TEST OF DELETE  
+    printf("the state of the list before the operation\n");
+    putDLList (stdout, myList);
+    printf("do command d in my list\n");
+    DLListDelete(myList);
+    printf("state after operation\n");
+    putDLList (stdout, myList);
+    printf("current line is the oringinal line\n");  
+    validDLList(myList);
+    printf("\n");
+    
+      
+	freeDLList (myList);
+	return EXIT_SUCCESS;
+}

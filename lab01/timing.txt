@@ -1,0 +1,34 @@
+Input	Initial	Has	   Number	AvgTime	AvgTime
+Size	Order	Dups   of runs	forusel	forsort
+5000	random	no	      10    0.20s	0.004s
+5000	sorted	no	      10    0.33s	0.004s
+5000	reverse	no	      10 	0.22s	0.004s
+5000	random	yes	      10 	0.20s	0.004s
+5000	sorted	yes	      10 	0.33s	0.004s
+5000	reverse	yes	      10 	0.022s	0.004s
+10000	random	no	      10 	0.65s	0.008s
+10000	sorted	no	      10 	1.0s	0.004s
+10000	reverse	no	      10 	0.032s	0.004s
+10000	random	yes	      10 	0.65s	0.006s
+10000	sorted	yes	      10 	1.0s	0.004s
+10000	reverse	yes	      10 	0.031s	0.006s
+
+
+EXPLAINATION:
+             1. From the table above, it is obvious that the time used for sorting
+                the number list taken by "sort -n" is much shorter than which taken
+                 by the "useIntList", this might because the program I wrote in the
+                "Intlist.c" is too prolix which will take longer time to get the 
+                result. 
+             2. Besides, the existance of the duplications do not cause too
+                big effects to the result, this may because the program will ignore
+                the duplication and only run for once.
+             3. The number of the input will cause big effects to the result of
+                the "useIntList", because with more input, the program will take
+                longer time to compare each imput, but this opinion does not seems
+                to work on the "sort -n", this might because the number of the 
+                input is still not big enough to cuase the effect to the "sort -n".
+             4. From the table we can see, the average time of the "sort -n" does
+                not change too much, it is always between 0.04s to 0.08s, this might
+                because the number of the input is too small to cause effect to 
+                the "sort-n".    

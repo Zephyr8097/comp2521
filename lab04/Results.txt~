@@ -1,0 +1,36 @@
+Results for Tests on 5000 values
+
+Depth = depth of tree, Cost = average #comparisons per search
+
+
+             Ascending Order        Prefix Order        Random Order
+Insert
+Method       Depth      Cost     Depth      Cost     Depth      Cost
+
+L            5000       3114     13         12       28         16
+
+A            5000       1886     2954       1115     28         16
+
+R            2492       952      1774       674      27         15
+
+B            206        63       20         14       23         13
+
+S            33  	    24       29  	    24       1149  	    23
+
+V            13         12       14         12       15         12
+
+
+Notes (what the above indicates):
+1. Inserting in ascending order using L and A methods will cost more comparations,
+   because the shape of the tree is a straight line which is just like a link list.
+   
+2. Prefix Order using L method will take less comparations because it is a quite
+   balanced already and inserting at leaves will not change its balance too much.
+   
+3. B method will take less comparations than the previous methods, because it is 
+   always rebalancing the tree which will make searching easier.
+   
+4. Splay tree will "remember" the number that recently inserted and which will make
+   the searching part easier.
+   
+5. AVL
